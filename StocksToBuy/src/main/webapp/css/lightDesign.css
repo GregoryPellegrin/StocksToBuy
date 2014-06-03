@@ -1,0 +1,89 @@
+/**
+ * Gregory Pellegrin
+ * pellegrin.gregory.work@gmail.com
+ */
+
+body
+{
+	background-color: rgb(231, 231, 231);
+}
+
+header section article h1 a, header section article h1 a:visited
+{
+	color: rgb(0, 0, 0);
+}
+
+header section article nav ul li span
+{
+	color: rgb(0, 0, 0);
+}
+
+section.tableSection
+{
+	background-color: rgb(255, 255, 255);
+}
+
+section.tableSection article .dashboard .filter
+{
+	background-color: rgb(230, 230, 230);
+}
+
+section.tableSection article .dashboard .filter label
+{
+	color: rgb(0, 0, 0);
+	
+	border-bottom-color: rgb(0, 0, 0);
+}
+
+.indiceTh
+{
+	background-color: rgb(255, 255, 255);
+}
+
+.indiceThSpan
+{
+	color: rgb(0, 0, 0);
+}
+
+.indiceTd
+{
+	background-color: rgb(255, 255, 255);
+	
+	color: rgb(0, 0, 0);
+}
+
+.indiceTdSelected
+{
+	background-color: rgb(255, 255, 255);
+}
+
+.dataTableThSpan
+{
+	color: rgb(0, 0, 0);
+	
+	border-bottom-color: rgb(0, 0, 0);
+}
+
+.dataTableTdEven
+{
+	background-color: rgb(255, 255, 255);
+	
+	color: rgb(0, 0, 0);
+}
+
+.dataTableTdOdd
+{
+	background-color: rgb(240, 240, 240);
+	
+	color: rgb(0, 0, 0);
+}
+
+.dataTableTdHover
+{
+	background-color: rgb(220, 220, 220);
+}
+
+.dataTableTdSelected
+{
+	background-color: rgb(210, 210, 210);
+}
