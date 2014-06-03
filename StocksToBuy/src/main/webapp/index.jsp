@@ -21,20 +21,7 @@
 		<script type="text/javascript" src="./script/tableLoad.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="./css/design.css"/>
-<%
-	if (request.getAttribute("design").equals("dark"))
-	{
-%>
-		<link rel="stylesheet" type="text/css" href="./css/darkDesign.css"/>
-<%
-	}
-	else
-	{
-%>
-		<link rel="stylesheet" type="text/css" href="./css/lightDesign.css"/>
-<%
-	}
-%>
+		<link id="design" rel="stylesheet" type="text/css" href="./css/lightDesign.css"/>
 	</head>
 	
 	<body>

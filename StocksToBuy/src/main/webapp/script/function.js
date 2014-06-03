@@ -3,6 +3,16 @@
  * pellegrin.gregory.work@gmail.com
  */
 
+function changeDesignInLight ()
+{
+	$('#design').attr('href', './css/lightDesign.css');
+}
+
+function changeDesignInDark ()
+{
+	$('#design').attr('href', './css/darkDesign.css');
+}
+
 function getServletAttribute (attributeName)
 {
 	if (attributeName = (new RegExp ('[?&]' + encodeURIComponent(attributeName) + '=([^&]*)')).exec(location.search))

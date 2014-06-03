@@ -5,10 +5,10 @@
 
 body
 {
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(24, 24, 24);
 }
 
-header section article h1 a, header section article h1 a:visited
+header section article h1 a, header section article h1 a:visited, header section article h2, header section article h3
 {
 	color: rgb(255, 255, 255);
 }
@@ -18,23 +18,26 @@ header section article nav ul li span
 	color: rgb(255, 255, 255);
 }
 
-section.tableSection article .dashboard .filter label
+section.tableSection
+{
+	background-color: rgb(0, 0, 0);
+}
+
+section.tableSection article .dashboard .filter
 {
 	background-color: rgb(25, 25, 25);
-	
+}
+
+section.tableSection article .dashboard .filter label
+{
 	color: rgb(255, 255, 255);
 	
 	border-bottom-color: rgb(255, 255, 255);
 }
 
-section.tableSection article .dashboard .filter .charts-inline-block
-{
-	background-color: rgb(15, 15, 15);
-}
-
 .indiceTh
 {
-	background-color: rgb(25, 25, 25);
+	background-color: rgb(0, 0, 0);
 }
 
 .indiceThSpan
@@ -44,29 +47,26 @@ section.tableSection article .dashboard .filter .charts-inline-block
 
 .indiceTd
 {
-	background-color: rgb(25, 25, 25);
+	background-color: rgb(0, 0, 0);
 	
 	color: rgb(255, 255, 255);
 }
 
-.indiceTdHover
-{
-	background-color: rgb(25, 25, 25);
-}
-
 .indiceTdSelected
 {
-	background-color: rgb(25, 25, 25);
+	background-color: rgb(0, 0, 0);
 }
 
 .dataTableTh
 {
-	background-color: rgb(25, 25, 25);
+	background-color: rgb(0, 0, 0);
 }
 
 .dataTableThSpan
 {
 	color: rgb(255, 255, 255);
+	
+	border-bottom-color: rgb(255, 255, 255);
 }
 
 .dataTableTdEven

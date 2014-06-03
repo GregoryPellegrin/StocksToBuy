@@ -8,7 +8,7 @@ body
 	background-color: rgb(231, 231, 231);
 }
 
-header section article h1 a, header section article h1 a:visited
+header section article h1 a, header section article h1 a:visited, header section article h2, header section article h3
 {
 	color: rgb(0, 0, 0);
 }
@@ -53,6 +53,11 @@ section.tableSection article .dashboard .filter label
 }
 
 .indiceTdSelected
+{
+	background-color: rgb(255, 255, 255);
+}
+
+.dataTableTh
 {
 	background-color: rgb(255, 255, 255);
 }
