@@ -7,10 +7,8 @@ package Field;
 
 public enum FieldNasdaq
 {
-	//URL_NYSE ("ftp://ftp.nasdaqtrader.com/symboldirectory/otherlisted.txt"),
-	//URL_NASDAQ ("ftp://ftp.nasdaqtrader.com/symboldirectory/nasdaqlisted.txt"),
-	URL_NYSE ("C:\\Users\\Gregory\\Downloads\\otherlisted.txt"),
-	URL_NASDAQ ("C:\\Users\\Gregory\\Downloads\\nasdaqlisted.txt"),
+	URL_NYSE ("ftp://ftp.nasdaqtrader.com/symboldirectory/otherlisted.txt"),
+	URL_NASDAQ ("ftp://ftp.nasdaqtrader.com/symboldirectory/nasdaqlisted.txt"),
 	
 	URL_LIMIT (150),//200 max
 	EOF_REGEX ("File Creation Time*.+"),

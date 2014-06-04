@@ -16,11 +16,8 @@ import com.google.visualization.datasource.datatable.ColumnDescription;
 import com.google.visualization.datasource.datatable.DataTable;
 import com.google.visualization.datasource.datatable.value.ValueType;
 import com.google.visualization.datasource.query.Query;
-import com.google.visualization.datasource.util.CsvDataSourceException;
 import com.google.visualization.datasource.util.CsvDataSourceHelper;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -88,9 +85,8 @@ public class TableStockValue extends DataSourceServlet
 		this.urlAfter = this.urlAfter + FieldYahooFinance.AVERAGE_VOLUME.toString();
 		this.urlAfter = this.urlAfter + FieldYahooFinance.MARKET_CAP.toString();
 		
-		//this.timer = new Timer ();
-		//this.timer.schedule(new RefreshSymbolList (), 0, FieldNasdaq.DAY_IN_MILLISECOND.toInt());
-		this.refreshSymbolList();
+		this.timer = new Timer ();
+		this.timer.schedule(new RefreshSymbolList (), 36000000, FieldNasdaq.DAY_IN_MILLISECOND.toInt());
 	}
 	
 	@Override
@@ -134,9 +130,8 @@ public class TableStockValue extends DataSourceServlet
 	
 	private void setUrlYahoo (String url)
 	{
-		try (final Reader symbolList = new FilterNasdaq (new BufferedReader (new FileReader (new File (url)))))
+		try (final Reader symbolList = new FilterNasdaq (new BufferedReader (new InputStreamReader (new URL (url).openStream()))))
 		{
-			//Reader symbolList = new FilterNasdaq (new BufferedReader (new InputStreamReader (new URL (url).openStream())));
 			String symbolLine = "";
 			int urlLimit = 0;
 			int characterSymbolList = symbolList.read();
