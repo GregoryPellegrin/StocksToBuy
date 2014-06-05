@@ -97,8 +97,16 @@ public class TableIndiceValue extends DataSourceServlet
 			
 			for (int i = 0; i < dataTable.getNumberOfRows(); i++)
 			{
-				String lastPriceString = this.formatter.format(Double.parseDouble(dataTable.getCell(i, 0).toString()));
-				String changePercentString = this.formatter.format(Double.parseDouble(dataTable.getCell(i, 1).toString()));
+				String lastPriceDataTable = dataTable.getCell(i, 0).toString();
+				String changePercentDataTable = dataTable.getCell(i, 1).toString();
+				
+				if (! lastPriceDataTable.matches(".*\\d.*"))
+					lastPriceDataTable = "0";
+				if (! changePercentDataTable.matches(".*\\d.*"))
+					changePercentDataTable = "0";
+				
+				String lastPriceString = this.formatter.format(Double.parseDouble(lastPriceDataTable));
+				String changePercentString = this.formatter.format(Double.parseDouble(changePercentDataTable));
 				
 				row.addCell(lastPriceString + " (" + changePercentString + "%)");
 			}
@@ -138,7 +146,7 @@ public class TableIndiceValue extends DataSourceServlet
 	
 	private String getDowJonesValue ()
 	{
-		String dowJonesValue = "N/A";
+		String dowJonesValue = "0";
 		
 		try (final Scanner dowJonesWebPage = new Scanner (new URL (FieldGoogleFinance.URL.toString()).openStream()))
 		{
