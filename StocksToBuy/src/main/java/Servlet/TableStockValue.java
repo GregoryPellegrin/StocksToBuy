@@ -87,6 +87,8 @@ public class TableStockValue extends DataSourceServlet
 		
 		this.timer = new Timer ();
 		this.timer.schedule(new RefreshSymbolList (), 36000000, FieldNasdaq.DAY_IN_MILLISECOND.toInt());
+		
+		this.refreshSymbolList();
 	}
 	
 	@Override
@@ -105,11 +107,11 @@ public class TableStockValue extends DataSourceServlet
 			}
 			catch (MalformedURLException e)
 			{
-				System.out.println(e);
+				System.out.println("TableStockValue generateDataTable() MalformedURLException " + "URL : " + url + " " + e);
 			}
 			catch (IOException e)
 			{
-				System.out.println(e);
+				System.out.println("TableStockValue generateDataTable() IOException " + e);
 			}
 		}
 		
@@ -150,7 +152,7 @@ public class TableStockValue extends DataSourceServlet
 				else
 				{
 					this.urlYahoo.add(this.urlBefore + symbolLine + this.urlAfter);
-
+					
 					urlLimit = 0;
 					symbolLine = "";
 				}
@@ -159,11 +161,11 @@ public class TableStockValue extends DataSourceServlet
 		}
 		catch (MalformedURLException e)
 		{
-			System.out.println(e);
+			System.out.println("TableStockValue setUrlYahoo() MalformedURLException " + "URL : " + url + " " + e);
 		}
 		catch (IOException e)
 		{
-			System.out.println(e);
+			System.out.println("TableStockValue setUrlYahoo() IOException " + e);
 		}
 	}
 }

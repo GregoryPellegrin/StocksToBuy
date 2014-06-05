@@ -26,25 +26,28 @@ function indiceResponse (response)
 		rowNumberCell: ''
 	};
 	
-	data.removeRows(0, data.getNumberOfRows() - 1);
-	
-	data.setProperties(0, 0, {style: 'color: blue;'});
-	
-	for (var i = 1; i < data.getNumberOfColumns(); i++)
+	if (data.getNumberOfRows() > 0)
 	{
-		if (data.getValue(0, i).indexOf('-') > -1)
-			data.setProperties(0, i, {style: 'color: red;'});
-		else
-			data.setProperties(0, i, {style: 'color: green;'});
+		data.removeRows(0, data.getNumberOfRows() - 1);
+
+		data.setProperties(0, 0, {style: 'color: blue;'});
+
+		for (var i = 1; i < data.getNumberOfColumns(); i++)
+		{
+			if (data.getValue(0, i).indexOf('-') > -1)
+				data.setProperties(0, i, {style: 'color: red;'});
+			else
+				data.setProperties(0, i, {style: 'color: green;'});
+		}
+
+		table.draw(data,
+		{
+			showRowNumber: false,
+			allowHtml: true,
+			sort: 'disable',
+			cssClassNames: cssClassNames
+		});
 	}
-	
-	table.draw(data,
-	{
-		showRowNumber: false,
-		allowHtml: true,
-		sort: 'disable',
-		cssClassNames: cssClassNames
-	});
 }
 
 function stockValueResponse (response)
@@ -76,35 +79,38 @@ function stockValueResponse (response)
 	netChangeColorFormatter.addRange(-9999999, 0, 'red', '00FFFFFF');
 	netChangeColorFormatter.addRange(0, 9999999, 'green', '00FFFFFF');
 	
-	netChangeColorFormatter.format(data, 2);
-	netChangeColorFormatter.format(data, 3);
-	
-	doubleNumberFormatter.format(data, 1);
-	doubleNumberFormatter.format(data, 2);
-	doubleNumberFormatter.format(data, 3);
-	doubleNumberFormatter.format(data, 4);
-	doubleNumberFormatter.format(data, 5);
-	doubleNumberFormatter.format(data, 6);
-	doubleNumberFormatter.format(data, 7);
-	doubleNumberFormatter.format(data, 8);
-	doubleNumberFormatter.format(data, 9);
-	doubleNumberFormatter.format(data, 10);
-	doubleNumberFormatter.format(data, 11);
-	
-	integerNumberFormatter.format(data, 12);
-	integerNumberFormatter.format(data, 13);
-	
-	table.draw(data,
+	if (data.getNumberOfRows() > 0)
 	{
-		showRowNumber: false,
-		allowHtml: true,
-		alternatingRowStyle: true,
-		page: 'enable',
-		pageSize: getPageSize('stockValue'),
-		sortColumn: 2,
-		sortAscending: false,
-		cssClassNames: cssClassNames
-	});
+		netChangeColorFormatter.format(data, 2);
+		netChangeColorFormatter.format(data, 3);
+
+		doubleNumberFormatter.format(data, 1);
+		doubleNumberFormatter.format(data, 2);
+		doubleNumberFormatter.format(data, 3);
+		doubleNumberFormatter.format(data, 4);
+		doubleNumberFormatter.format(data, 5);
+		doubleNumberFormatter.format(data, 6);
+		doubleNumberFormatter.format(data, 7);
+		doubleNumberFormatter.format(data, 8);
+		doubleNumberFormatter.format(data, 9);
+		doubleNumberFormatter.format(data, 10);
+		doubleNumberFormatter.format(data, 11);
+
+		integerNumberFormatter.format(data, 12);
+		integerNumberFormatter.format(data, 13);
+
+		table.draw(data,
+		{
+			showRowNumber: false,
+			allowHtml: true,
+			alternatingRowStyle: true,
+			page: 'enable',
+			pageSize: getPageSize('stockValue'),
+			sortColumn: 2,
+			sortAscending: false,
+			cssClassNames: cssClassNames
+		});
+	}
 }
 
 function stockFilterResponse (response)
@@ -259,32 +265,35 @@ function stockFilterResponse (response)
 	netChangeColorFormatter.addRange(-9999999, 0, 'red', '00FFFFFF');
 	netChangeColorFormatter.addRange(0, 9999999, 'green', '00FFFFFF');
 	
-	netChangeColorFormatter.format(data, 2);
-	netChangeColorFormatter.format(data, 3);
-	
-	doubleNumberFormatter.format(data, 1);
-	doubleNumberFormatter.format(data, 2);
-	doubleNumberFormatter.format(data, 3);
-	doubleNumberFormatter.format(data, 4);
-	doubleNumberFormatter.format(data, 5);
-	doubleNumberFormatter.format(data, 6);
-	doubleNumberFormatter.format(data, 7);
-	doubleNumberFormatter.format(data, 8);
-	doubleNumberFormatter.format(data, 9);
-	doubleNumberFormatter.format(data, 10);
-	doubleNumberFormatter.format(data, 11);
-	
-	integerNumberFormatter.format(data, 12);
-	integerNumberFormatter.format(data, 13);
-	
-	dashboard.bind(symbolFilter, table);
-	dashboard.bind(lastPriceSlider, table);
-	dashboard.bind(changePercentSlider, table);
-	dashboard.bind(changeDollarSlider, table);
-	dashboard.bind(openSlider, table);
-	dashboard.bind(closeSlider, table);
-	dashboard.bind(volumeSlider, table);
-	dashboard.bind(averageVolumeSlider, table);
-	
-	dashboard.draw(data);
+	if (data.getNumberOfRows() > 0)
+	{
+		netChangeColorFormatter.format(data, 2);
+		netChangeColorFormatter.format(data, 3);
+
+		doubleNumberFormatter.format(data, 1);
+		doubleNumberFormatter.format(data, 2);
+		doubleNumberFormatter.format(data, 3);
+		doubleNumberFormatter.format(data, 4);
+		doubleNumberFormatter.format(data, 5);
+		doubleNumberFormatter.format(data, 6);
+		doubleNumberFormatter.format(data, 7);
+		doubleNumberFormatter.format(data, 8);
+		doubleNumberFormatter.format(data, 9);
+		doubleNumberFormatter.format(data, 10);
+		doubleNumberFormatter.format(data, 11);
+
+		integerNumberFormatter.format(data, 12);
+		integerNumberFormatter.format(data, 13);
+
+		dashboard.bind(symbolFilter, table);
+		dashboard.bind(lastPriceSlider, table);
+		dashboard.bind(changePercentSlider, table);
+		dashboard.bind(changeDollarSlider, table);
+		dashboard.bind(openSlider, table);
+		dashboard.bind(closeSlider, table);
+		dashboard.bind(volumeSlider, table);
+		dashboard.bind(averageVolumeSlider, table);
+
+		dashboard.draw(data);
+	}
 }

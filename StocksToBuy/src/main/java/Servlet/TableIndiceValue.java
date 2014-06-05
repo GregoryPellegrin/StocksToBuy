@@ -107,11 +107,11 @@ public class TableIndiceValue extends DataSourceServlet
 		}
 		catch (MalformedURLException e)
 		{
-			System.out.println(e);
+			System.out.println("TableIndiceValue generateDataTable() MalformedURLException " + "URL : " + this.urlYahoo + " " + e);
 		}
 		catch (IOException e)
 		{
-			System.out.println(e);
+			System.out.println("TableIndiceValue generateDataTable() IOException " + e);
 		}
 		
 		return dataTable;
@@ -166,11 +166,11 @@ public class TableIndiceValue extends DataSourceServlet
 		}
 		catch (MalformedURLException e)
 		{
-			System.out.println(e);
+			System.out.println("TableIndiceValue getDowJonesValue() MalformedURLException " + "URL : " + FieldGoogleFinance.URL.toString() + " " + e);
 		}
 		catch (IOException e)
 		{
-			System.out.println(e);
+			System.out.println("TableIndiceValue getDowJonesValue() IOException " + e);
 		}
 		
 		return dowJonesValue;
