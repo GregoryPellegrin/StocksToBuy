@@ -3,17 +3,13 @@ StocksToBuy
 
 Provides U.S stocks data and stocks filters in real time
 
-
-
 Note pour le mettre sur un vps:
-
 
 Acheter
 Aler ici https://www.ovh.com/ca/fr/vps/vps-classic.xml
 Prendre le moins cher
 Choisir ubuntu comme os
 Payer
-
 
 Se connecter
 Ouvrir putty
@@ -26,7 +22,6 @@ Fournit dans l'email (root)
 
 Password
 Fournit dans l'email
-
 
 Mettre a jour
 sudo apt-get update
@@ -49,7 +44,6 @@ asadmin enable-secure-admin
 asadmin change-admin-password (Le nom de l'admin est admin, servira a se connecter a glassfish)
 
 Ajouter export PATH=/opt/glassfish4/bin:$PATH au fichier .bashrc ou .profile si pas .bashrc
-
 
 Aller dans la console d'administration de glassfish
 http://ADRESSE_IP:4848/
