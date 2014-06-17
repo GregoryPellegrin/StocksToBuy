@@ -15,6 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet (name = "WebSite", urlPatterns ={"/WebSite"})
 
+/*
+ * Sauvegarder le design
+ * Faire le menu de navigation
+ * Refresh uniquement le changement de valeur et non le reafichage du tableau
+ */
+
 public final class WebSite extends HttpServlet
 {
 	private String forward;
