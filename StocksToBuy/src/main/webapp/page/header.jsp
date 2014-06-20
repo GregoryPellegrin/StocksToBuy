@@ -8,7 +8,7 @@
 		<article>
 			<h1><a href="WebSite">Stocks To Buy</a></h1>
 			
-			<h2>Provides U.S stocks data and stocks filters in real time</h2>
+			<h2>Provides U.S stock data and stock filters in real time</h2>
 			
 	<%
 		if (request.getAttribute("forward").equals("stockFilter"))

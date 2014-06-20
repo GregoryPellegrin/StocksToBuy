@@ -126,19 +126,13 @@ public class TableStockValue extends DataSourceServlet
 	
 	private void refreshSymbolList ()
 	{
-		System.out.println("Start of refresh of stocks symbols");
-		
 		this.urlYahoo.clear();
 		
-		System.out.println("Refresh of " + FieldNasdaq.URL_NYSE.toString());
 		this.setUrlYahoo(FieldNasdaq.URL_NYSE.toString());
-		System.out.println("Rows created for " + FieldNasdaq.URL_NYSE.toString() + " (" + this.urlYahoo.size() + ")");
+		System.out.println("Rows created for " + FieldNasdaq.URL_NYSE.toString() + " (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
 		
-		System.out.println("Refresh of " + FieldNasdaq.URL_NASDAQ.toString());
 		this.setUrlYahoo(FieldNasdaq.URL_NASDAQ.toString());
-		System.out.println("Rows created for " + FieldNasdaq.URL_NASDAQ.toString() + " (" + this.urlYahoo.size() + ")");
-		
-		System.out.println("End of refresh");
+		System.out.println("Rows created for " + FieldNasdaq.URL_NASDAQ.toString() + " (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
 	}
 	
 	private void setUrlYahoo (String url)

@@ -11,7 +11,7 @@
 		<meta name="author" content="Gregory Pellegrin pellegrin.gregory.work@gmail.com"/>
 		<meta name="description" lang="en" content="Market and stocks data"/>
 		<link rel="icon" type="image/png" href="./resources/icon/logo.png"/>
-		<title>Stocks To Buy</title>
+		<title>Stock To Buy</title>
 		
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
