@@ -129,10 +129,10 @@ public class TableStockValue extends DataSourceServlet
 		this.urlYahoo.clear();
 		
 		this.setUrlYahoo(FieldNasdaq.URL_NYSE.toString());
-		System.out.println("Rows created for " + FieldNasdaq.URL_NYSE.toString() + " (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
-		
 		this.setUrlYahoo(FieldNasdaq.URL_NASDAQ.toString());
-		System.out.println("Rows created for " + FieldNasdaq.URL_NASDAQ.toString() + " (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
+		
+		System.out.println("Stock (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
+		System.out.println("Page (~" + ((this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) / 11) + ")");
 	}
 	
 	private void setUrlYahoo (String url)
