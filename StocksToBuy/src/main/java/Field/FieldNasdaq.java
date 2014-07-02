@@ -10,6 +10,9 @@ public enum FieldNasdaq
 	URL_NYSE ("ftp://ftp.nasdaqtrader.com/symboldirectory/otherlisted.txt"),
 	URL_NASDAQ ("ftp://ftp.nasdaqtrader.com/symboldirectory/nasdaqlisted.txt"),
 	
+	PATH_NYSE ("C:\\Users\\Gregory\\Downloads\\otherlisted.txt"),
+	PATH_NASDAQ ("C:\\Users\\Gregory\\Downloads\\nasdaqlisted.txt"),
+	
 	URL_LIMIT (150),//200 max
 	EOF_REGEX ("File Creation Time*.+"),
 	

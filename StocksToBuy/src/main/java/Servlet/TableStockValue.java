@@ -18,6 +18,10 @@ import com.google.visualization.datasource.datatable.value.ValueType;
 import com.google.visualization.datasource.query.Query;
 import com.google.visualization.datasource.util.CsvDataSourceHelper;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -85,8 +89,8 @@ public class TableStockValue extends DataSourceServlet
 		this.urlAfter = this.urlAfter + FieldYahooFinance.AVERAGE_VOLUME.toString();
 		this.urlAfter = this.urlAfter + FieldYahooFinance.MARKET_CAP.toString();
 		
-		this.timer = new Timer ();
-		this.timer.schedule(new RefreshSymbolList (), 1000000, FieldNasdaq.DAY_IN_MILLISECOND.toInt());
+		//this.timer = new Timer ();
+		//this.timer.schedule(new RefreshSymbolList (), 10000000, FieldNasdaq.DAY_IN_MILLISECOND.toInt());// Dans 10000000 millisec puis tout les jours
 		
 		this.refreshSymbolList();
 	}
@@ -128,16 +132,19 @@ public class TableStockValue extends DataSourceServlet
 	{
 		this.urlYahoo.clear();
 		
-		this.setUrlYahoo(FieldNasdaq.URL_NYSE.toString());
-		this.setUrlYahoo(FieldNasdaq.URL_NASDAQ.toString());
+		this.setUrlYahoo(FieldNasdaq.PATH_NYSE.toString());
+		//this.setUrlYahoo(FieldNasdaq.URL_NYSE.toString());
+		this.setUrlYahoo(FieldNasdaq.PATH_NASDAQ.toString());
+		//this.setUrlYahoo(FieldNasdaq.URL_NASDAQ.toString());
 		
 		System.out.println("Stock (~" + (this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) + ")");
 		System.out.println("Page (~" + ((this.urlYahoo.size() * FieldNasdaq.URL_LIMIT.toInt()) / 11) + ")");
 	}
 	
-	private void setUrlYahoo (String url)
+	private void setUrlYahoo (String path)
 	{
-		try (final Reader symbolList = new FilterNasdaq (new BufferedReader (new InputStreamReader (new URL (url).openStream()))))
+		//try (final Reader symbolList = new FilterNasdaq (new BufferedReader (new InputStreamReader (new URL (url).openStream()))))
+		try (Reader symbolList = new FilterNasdaq (new BufferedReader (new FileReader (new File (path)))))
 		{
 			String symbolLine = "";
 			int urlLimit = 0;
@@ -164,13 +171,17 @@ public class TableStockValue extends DataSourceServlet
 			}
 			this.urlYahoo.set(this.urlYahoo.size() - 1, this.urlYahoo.get(this.urlYahoo.size() - 1).replaceFirst(FieldNasdaq.EOF_REGEX.toString(), ""));
 		}
-		catch (MalformedURLException e)
+		catch (FileNotFoundException e)
+		{
+			System.out.println("TableStockValue setUrlYahoo() FileNotFoundException " + "PATH : " + path + " " + e);
+		}
+		/*catch (MalformedURLException e)
 		{
 			System.out.println("TableStockValue setUrlYahoo() MalformedURLException " + "URL : " + url + " " + e);
-		}
+		}*/
 		catch (IOException e)
 		{
-			System.out.println("TableStockValue setUrlYahoo() IOException " + e);
+			System.out.println("TableStockValue setUrlYahoo() IOException " + "URL : " + path + " " + e);
 		}
 	}
 }

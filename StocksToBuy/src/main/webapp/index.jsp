@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="./script/tableLoad.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="./css/design.css"/>
-		<link id="design" rel="stylesheet" type="text/css" href="./css/lightDesign.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/lightDesign.css"/>
 	</head>
 	
 	<body>

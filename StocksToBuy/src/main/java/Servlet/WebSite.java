@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 /*
  * Sauvegarder le design
  * Faire le menu de navigation
- * Refresh uniquement le changement de valeur et non le reafichage du tableau
+ * Lors du refresh du tableau
  */
 
 public final class WebSite extends HttpServlet
