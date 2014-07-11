@@ -13,7 +13,7 @@ function indiceTable ()
 {
 	var indiceData = new google.visualization.Query('TableIndiceValue', {sendMethod: 'scriptInjection'});
 	
-	indiceData.setRefreshInterval(5);
+	//indiceData.setRefreshInterval(5);
 	indiceData.send(indiceResponse);
 }
 
@@ -23,7 +23,7 @@ function stockValueTable ()
 	{
 		var stockValueData = new google.visualization.Query('TableStockValue', {sendMethod: 'scriptInjection'});
 		
-		stockValueData.setRefreshInterval(10);
+		//stockValueData.setRefreshInterval(10);
 		stockValueData.send(stockValueResponse);
 	}
 }
