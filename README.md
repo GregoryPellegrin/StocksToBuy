@@ -4,33 +4,9 @@ StocksToBuy
 Provides U.S stocks data and stocks filters in real time
 
 ![alt tag](http://image-store.slidesharecdn.com/6056733a-0a10-11e4-9ff5-12313d0148e5-large.png)
-
-
-
-
-
 ![alt tag](http://image-store.slidesharecdn.com/68ce100e-0a10-11e4-b0ce-22000a98b2af-large.png)
-
-
-
-
-
 ![alt tag](http://image-store.slidesharecdn.com/75780f6c-0a10-11e4-9eda-12313d03353b-large.png)
-
-
-
-
-
 ![alt tag](http://image-store.slidesharecdn.com/7cf2aefa-0a10-11e4-85ca-12313b090d61-large.png)
-
-
-
-
-
-
-
-
-
 
 Note pour le mettre sur un vps:
 
