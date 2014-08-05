@@ -1,7 +1,7 @@
 StocksToBuy
 ===========
 
-Provides U.S stocks data and stocks filters in real time
+Web Application display stock data, stock market index and options to filter stock
 
 ![alt tag](http://image-store.slidesharecdn.com/6056733a-0a10-11e4-9ff5-12313d0148e5-large.png)
 ![alt tag](http://image-store.slidesharecdn.com/68ce100e-0a10-11e4-b0ce-22000a98b2af-large.png)
