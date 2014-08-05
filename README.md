@@ -11,7 +11,7 @@ Provides U.S stocks data and stocks filters in real time
 Note pour le mettre sur un vps:
 
 Acheter
-Aler ici https://www.ovh.com/ca/fr/vps/vps-classic.xml
+Aller ici https://www.ovh.com/ca/fr/vps/vps-classic.xml
 Prendre le moins cher
 Choisir ubuntu comme os
 Payer
